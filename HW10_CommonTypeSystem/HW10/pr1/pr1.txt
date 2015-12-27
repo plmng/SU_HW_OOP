@@ -1,0 +1,31 @@
+•	Which .NET data types are value types? Which types are reference types?
+
+Value types: All numeric data types, Boolean, Char, and Date, All structures, even if their members are reference types, Enumerations, since their underlying type is always SByte, Short, Integer, Long, Byte, UShort, UInteger, or ULong
+Reference types: String, All arrays, even if their elements are value types, Class types, such as Form, Delegates
+
+•	How do value and reference types differ when assigned to a variable? 
+
+ Value type if it holds the data within its own memory allocation.
+ Reference type contains a pointer to another memory location that holds the data. 
+
+•	How do value and reference types behave when passed as argument to a method?
+
+When passed as argument, value types cannot be changed directly from inside the function.
+Reference types will be changed inside the function body because the pointer address is passed as argument.
+
+•	Where in memory are value types allocated? Where are reference types allocated?
+Value types ->  stack, 
+Reference types -> heap
+
+•	What is data mutation? Can value types be mutated? Can reference types be mutated?
+Primitive value types are immutable and can only be copied to another address in the stack. Reference types can be muteted.
+
+•	What is the difference between mutating and setting (assigning) a variable? Give examples.
+Mutating means changing a value of the object that mutates. Setting, means to create a new address in the heap.
+Example: Mutating:
+settin: List<int> number = new List<int>() 
+mutation: numbers[0]= 10
+
+•	What are the out and ref keywords used for? In what do they differ?
+The ref keyword causes an argument to be passed by reference, not by value. The effect of passing by reference is that any change to the parameter in the called method is reflected in the calling method. The out keyword causes arguments to be passed by reference. This is like the ref keyword, except that ref requires that the variable be initialized before it is passed. To use an out parameter, both the method definition and the calling method must explicitly use the out keyword
+The difference is that a variable you pass as an out parameter doesn't need to be initialised, and the method using the ref parameter has to set it to something

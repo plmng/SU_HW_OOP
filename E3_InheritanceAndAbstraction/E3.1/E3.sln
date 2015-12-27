@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pr1_BookShop", "Pr1_BookShop\pr1_BookShop.csproj", "{3A765ABA-7145-40AD-A07C-0714211A5305}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pr2_Abstraction", "pr2_Abstraction\pr2_Abstraction.csproj", "{954943F5-8DE3-4721-A182-73009476F57B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A765ABA-7145-40AD-A07C-0714211A5305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A765ABA-7145-40AD-A07C-0714211A5305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A765ABA-7145-40AD-A07C-0714211A5305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A765ABA-7145-40AD-A07C-0714211A5305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{954943F5-8DE3-4721-A182-73009476F57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{954943F5-8DE3-4721-A182-73009476F57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{954943F5-8DE3-4721-A182-73009476F57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{954943F5-8DE3-4721-A182-73009476F57B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
