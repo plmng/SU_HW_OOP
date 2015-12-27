@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2B11F07-F8D3-4799-A7B1-BE15FE63CECA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeerBellyGame</RootNamespace>
+    <AssemblyName>BeerBellyGame</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Attributes\PlayerRaceAttribute.cs" />
+    <Compile Include="Enums\GameResult.cs" />
+    <Compile Include="Engines\MapLoader.cs" />
+    <Compile Include="Engines\RacesExtractor.cs" />
+    <Compile Include="Exceptions\GameNullException.cs" />
+    <Compile Include="Exceptions\GameOutOfBourdersException.cs" />
+    <Compile Include="GameObjects\AI\AIProvider.cs" />
+    <Compile Include="Interfaces\IAIMovement.cs" />
+    <Compile Include="GameObjects\AI\RandomAIProvider.cs" />
+    <Compile Include="GameObjects\AI\TargetCharacterAIProvider.cs" />
+    <Compile Include="GameObjects\Characters\AIPlayer.cs" />
+    <Compile Include="Attributes\EnemyRaceAttribute.cs" />
+    <Compile Include="Attributes\FriendRaceAttribute.cs" />
+    <Compile Include="GameObjects\Characters\Factories\CharacterFactory.cs" />
+    <Compile Include="GameObjects\Characters\Factories\EnemyFactory.cs" />
+    <Compile Include="GameObjects\Characters\Factories\FriendFactory.cs" />
+    <Compile Include="GameObjects\Characters\Friend.cs" />
+    <Compile Include="GameObjects\Characters\Races\AIPlayerRaces\GrandpaRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\AIPlayerRaces\LeprechaunRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\AIPlayerRaces\NinjaRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\AIPlayerRaces\SuperGrandmaRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\AIPlayerRaces\WarriorRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\AIPlayerRaces\XenaRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\AIPlayerRaces\YodaRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\PlayerRaces\ChuckNorrisRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\PlayerRaces\MageRace.cs" />
+    <Compile Include="GameObjects\HUD\Hud.cs" />
+    <Compile Include="Interfaces\ICharacter.cs" />
+    <Compile Include="Interfaces\IDrawable.cs" />
+    <Compile Include="Interfaces\IEquipable.cs" />
+    <Compile Include="Interfaces\IHealable.cs" />
+    <Compile Include="Interfaces\IMovable.cs" />
+    <Compile Include="Interfaces\IRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\AbstractRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\PlayerRaces\PickachuRace.cs" />
+    <Compile Include="GameObjects\Characters\Races\AIPlayerRaces\PolicemanRace.cs" />
+    <Compile Include="Enums\Direction.cs" />
+    <Compile Include="GameObjects\Items\BeerItem.cs" />
+    <Compile Include="GameObjects\Items\Bullet.cs" />
+    <Compile Include="GameObjects\Items\CollectableItem.cs" />
+    <Compile Include="GameObjects\Items\LargeHealthItem.cs" />
+    <Compile Include="GameObjects\Items\LifeItem.cs" />
+    <Compile Include="GameObjects\Items\MediumHealthItem.cs" />
+    <Compile Include="GameObjects\Items\SmallHealthItem.cs" />
+    <Compile Include="GameObjects\Items\SpyToolItem.cs" />
+    <Compile Include="GameObjects\Items\WeaponItem.cs" />
+    <Compile Include="GameUI\IInputHandlerer.cs" />
+    <Compile Include="Enums\GameCommand.cs" />
+    <Compile Include="GameUI\WpfUI\KeyDownEventArgs.cs" />
+    <Compile Include="GameUI\WpfUI\Windows\ChoosePlayerWindow.xaml.cs">
+      <DependentUpon>ChoosePlayerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameUI\WpfUI\Windows\EndGameWindow.xaml.cs">
+      <DependentUpon>EndGameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameUI\WpfUI\Windows\HowToPlayWindow.xaml.cs">
+      <DependentUpon>HowToPlayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameUI\WpfUI\Windows\MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameUI\WpfUI\WpfInputHandlerer.cs" />
+    <Compile Include="GameObjects\Items\MazeItem.cs" />
+    <Compile Include="GameUI\IRenderer.cs" />
+    <Compile Include="GameUI\WpfUI\WpfRenderer.cs" />
+    <Page Include="GameUI\WpfUI\Windows\ChoosePlayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameUI\WpfUI\Windows\EndGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameUI\WpfUI\Windows\HowToPlayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameUI\WpfUI\Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\GameEngine.cs" />
+    <Compile Include="GameObjects\Characters\Character.cs" />
+    <Compile Include="GameObjects\Characters\Enemy.cs" />
+    <Compile Include="GameObjects\GameObject.cs" />
+    <Compile Include="GameObjects\Characters\Player.cs" />
+    <Compile Include="GameObjects\Position.cs" />
+    <Compile Include="GameObjects\Size.cs" />
+    <Compile Include="GameUI\WpfUI\Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="GameUI\WpfUI\Windows\MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="TheBeerBellyGameClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Items\wall_50x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Maps\map_l1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Items\heart_v1.png" />
+    <Resource Include="Content\Items\heart_v2.png" />
+    <Resource Include="Content\Items\heart_v3.png" />
+    <Resource Include="Content\Items\potion_v1.png" />
+    <Resource Include="Content\Items\potion_v2.png" />
+    <Resource Include="Content\Items\potion_v3.png" />
+    <Resource Include="Content\Items\potion_v4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Items\beer_vp1.png" />
+    <Resource Include="Content\Items\beer_vp2.png" />
+    <Resource Include="Content\Items\beer_vp3.png" />
+    <Resource Include="Content\Items\beer_vp4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Characters\leprechaun_v1.png" />
+    <Resource Include="Content\Characters\leprechaun_v2.png" />
+    <Resource Include="Content\Characters\policeman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Characters\pikachu_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Windows\keyboard_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Windows\background.jpg" />
+    <Resource Include="Content\Windows\icon.png" />
+    <Resource Include="Content\Windows\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Windows\go_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Characters\chucknorrist.gif" />
+    <Resource Include="Content\Characters\grandma.png" />
+    <Resource Include="Content\Characters\grandpa.png" />
+    <Resource Include="Content\Characters\mage.png" />
+    <Resource Include="Content\Characters\ninja.png" />
+    <Resource Include="Content\Characters\samurai.png" />
+    <Resource Include="Content\Characters\warrior.png" />
+    <Resource Include="Content\Characters\yoda.png" />
+    <Resource Include="Content\Characters\xena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Windows\logo_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Items\bullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Windows\spacebar.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
